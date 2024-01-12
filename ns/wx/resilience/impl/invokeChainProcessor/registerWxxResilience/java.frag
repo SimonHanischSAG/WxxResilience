@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">registerWxxResilience</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:1:required invokeChain.blacklist</value>
+    <value>[o] field:0:required message</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SW52b2tlTWFuYWdlciBpbnZva2VNYW5hZ2VyID0gSW52b2tlTWFuYWdlci5nZXREZWZhdWx0KCk7
+DQpJRGF0YU1hcCBwaXBlTWFwID0gbmV3IElEYXRhTWFwKHBpcGVsaW5lKTsNClN0cmluZ1tdIGJs
+YWNrbGlzdCA9IHBpcGVNYXAuZ2V0QXNTdHJpbmdBcnJheSgiaW52b2tlQ2hhaW4uYmxhY2tsaXN0
+Iik7DQpXeHhSZXNpbGllbmNlUHJvY2Vzc29yIG5ld1Byb2Nlc3NvciA9IG5ldyBXeHhSZXNpbGll
+bmNlUHJvY2Vzc29yKGJsYWNrbGlzdCk7DQpTdHJpbmcgbWVzc2FnZSA9ICIiOw0KDQppZiAocHJv
+Y2Vzc29yICE9IG51bGwpIHsNCglpbnZva2VNYW5hZ2VyLnVucmVnaXN0ZXJQcm9jZXNzb3IocHJv
+Y2Vzc29yKTsJCQkNCglpbnZva2VNYW5hZ2VyLnJlZ2lzdGVyUHJvY2Vzc29yKG5ld1Byb2Nlc3Nv
+cik7DQoJcHJvY2Vzc29yID0gbmV3UHJvY2Vzc29yOw0KCW1lc3NhZ2UgPSAiV3h4UmVzaWxpZW5j
+ZVByb2Nlc3NvciByZS1yZWdpc3RlcmVkIHRvIEludm9rZUNoYWluIHVzaW5nIGJsYWNrbGlzdDog
+IiArIEFycmF5cy50b1N0cmluZyhibGFja2xpc3QpOw0KfSBlbHNlIHsNCglpbnZva2VNYW5hZ2Vy
+LnJlZ2lzdGVyUHJvY2Vzc29yKG5ld1Byb2Nlc3Nvcik7DQoJcHJvY2Vzc29yID0gbmV3UHJvY2Vz
+c29yOw0KCW1lc3NhZ2UgPSAiV3h4UmVzaWxpZW5jZVByb2Nlc3NvciByZWdpc3RlcmVkIGluIElu
+dm9rZUNoYWluIHVzaW5nIGJsYWNrbGlzdDogIiArIEFycmF5cy50b1N0cmluZyhibGFja2xpc3Qp
+Ow0KfQ0KbG9nSW5mbyhtZXNzYWdlKTsNCnBpcGVNYXAucHV0KCJtZXNzYWdlIiwgbWVzc2FnZSk7
+DQoJDQoJDQoJDQo=</value>
+</Values>

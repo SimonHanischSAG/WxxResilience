@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="wx.log4j2">
+	<Appenders>
+		<WxLog4j2RollingFile name="WxxResilience" fileName="./logs/WxxResilience.log" />
+		<WxLog4j2RollingFile name="WxxResilience.Error" fileName="./logs/WxxResilience.Error.log" />
+	</Appenders>
+	<Loggers>
+		<Logger name="WxxResilience" level="info" additivity="false">
+			<AppenderRef ref="WxxResilience" />
+		</Logger>
+		<Logger name="WxxResilience.Error" level="info" additivity="false">
+			<AppenderRef ref="WxxResilience.Error"/>
+		</Logger>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,69 @@
+################################################################################
+# General inclusions for configuring additional stuff like logging if necessary
+################################################################################
+wx.config.env.LOCAL-DEV=wxconfig-LOCAL-DEV.cnf
+wx.config.env.DEV=wxconfig-DEV.cnf
+wx.config.env.TEST=wxconfig-TEST.cnf
+wx.config.env.QA=wxconfig-QA.cnf
+wx.config.env.PROD=wxconfig-PROD.cnf
+
+wx.config.incl=auto-setup.xml
+
+################################################################################
+# General
+################################################################################
+timestampPattern=yyyy-MM-dd'T'HH:mm:ss.SSSZ
+
+
+################################################################################
+# Logging
+################################################################################
+# Can completely be overwritten by logging.service.env in wxconfig-<env>.cnf
+# Log service for pub.flow:debugLog (IS server.log)
+logging.service=wx.resilience.impl.log.wrapper:logDebugLog
+# Log service for WxLog4j2 (log4j2)
+logging.service=wx.resilience.impl.log.wrapper:logWxLog4j2
+# Log service for WxLog (Logback)
+#logging.service=wx.resilience.impl.log.wrapper:logWxLog
+# Log service for WxLog2 (log4j)
+#logging.service=wx.resilience.impl.log.wrapper:logWxLog2
+# Log service for WxSplunk
+#logging.service=wx.resilience.impl.log.wrapper:logWxSplunk
+# Log service for WxLoki
+#logging.service.env=wx.resilience.impl.log.wrapper:logWxLoki
+
+
+################################################################################
+# Error Handling
+################################################################################
+# retries for maxRetryAttempts="-1"
+maxRetryAttemptsBeforeCancelRetry=20000
+
+# Configure an uuid temporarily in order to break an (endless) retry loop:
+#break.retry.loop.for.id=987987987
+
+
+################################################################################
+# Status Message
+################################################################################
+status.connectionAliasName=DEFAULT_IS_JMS_CONNECTION
+status.destinationName=StatusTopic
+status.destinationType=TOPIC
+#status.publishErrorStatus.enabled=true
+
+# max pipeline length for sending to status topic
+status.pipeline.maxLength=2048000
+# A list of Java-Classes that should be included in the pipeline when publishing StatusMessages
+# status.pipeline.whitelist=
+# status.pipeline.whitelist=
+
+
+################################################################################
+# WxxResilience in InvokeChain instead of implementing in top-level-service: 
+# Blacklist for which service it must not be executed:
+################################################################################
+invokeChain.blacklist=wm.
+invokeChain.blacklist=wx.config.
+invokeChain.blacklist=wx.resilience.
+invokeChain.blacklist=wx.interceptor.
+

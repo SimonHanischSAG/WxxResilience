@@ -1,0 +1,219 @@
+<exceptionHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../WxxResilience/config/ExceptionHandling.xsd/ExceptionHandling.xsd">
+    
+    <!-- Fully configured example for globalException:
+    <globalException type="java.lang.NullPointerException" callerType="HTTP" errorToBeThrown="FATAL" errorMessageContains="Error" errorMessageRegex=".*rr.*" maxRetryAttempts="1" exceptionHandlingId="WxxResilience.global.999">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>-->
+    <!-- Minimally configured example for globalException:
+    <globalException type="all" errorToBeThrown="NONE" exceptionHandlingId="WxxResilience.global.998">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>-->
+	
+	<!-- HTTP targets -->
+	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageContains="Connection refused: connect" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.010">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="java.net.ConnectException" callerType="JMS" errorMessageContains="Connection refused: connect" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.011">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="java.io.IOException" callerType="JMS" errorMessageContains="Connection refused" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.012">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorMessageContains="timed out" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.013">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorMessageContains="Connection reset" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.014">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.net.NetException" callerType="JMS" errorMessageContains="Server Error: 503 Service Unavailable" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.015">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.net.NetException" callerType="JMS" errorMessageContains="Server Error: 502 Bad Gateway" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.016">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	
+	<!-- SAP targets -->
+	<globalException type="com.wm.adapter.sap.error.SAPAdapterConnectionException" callerType="JMS" errorMessageContains="JCO_ERROR_COMMUNICATION" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.020">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.pkg.art.error.DetailedException" callerType="JMS" errorMessageRegex=".+sap.+Resource not available.*" errorToBeThrown="FATAL" maxRetryAttempts="10" exceptionHandlingId="WxxResilience.global.021">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorMessageContains="JCO_ERROR_TIMEOUT" errorToBeThrown="FATAL" maxRetryAttempts="10" exceptionHandlingId="WxxResilience.global.022">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	
+	<!-- JDBC targets -->
+	<globalException type="com.wm.pkg.art.error.DetailedException" callerType="JMS" errorMessageContains="Resource not available" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.030">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="javax.resource.ResourceException" callerType="JMS" errorMessageContains="Unable to get a connection to resource" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.031">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	
+	<!-- Broken Cache Managers -->
+	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageRegex=".*Cache manager .* is not started*" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.global.040">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	
+	<!-- Non-temporary errors with no retry -->
+	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageContains="index out of range" errorToBeThrown="FATAL" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.050">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageContains="Missing Parameter" errorToBeThrown="FATAL" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.051">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageContains="Missing required parameter" errorToBeThrown="FATAL" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.052">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+	<globalException type="wx.resilience.pub.resilience$DocumentDiscardedException" errorToBeThrown="NONE" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.053">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+	
+	<!-- Global fallbacks for all callerTypes -->
+	<!-- Handle unknown services for 2 hours (only working for InvokeChain) -->
+	<globalException type="all" callerType="JMS" errorMessageRegex=".*Service .* invoking unknown service .* at .*. The service may have been renamed, moved or disabled." errorToBeThrown="FATAL" maxRetryAttempts="30" exceptionHandlingId="WxxResilience.global.054">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<!-- Handle uncompiled services for 2 minutes -->
+	<globalException type="all" callerType="JMS" errorMessageContains="is not operational. To run this service, first recompile the Java source." errorToBeThrown="FATAL" maxRetryAttempts="10" exceptionHandlingId="WxxResilience.global.055">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorToBeThrown="FATAL" maxRetryAttempts="3" exceptionHandlingId="WxxResilience.global.002">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="REST" errorToBeThrown="NONE" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.003">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+	<globalException type="all" callerType="RESTV2" errorToBeThrown="NONE" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.004">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+	<globalException type="all" callerType="RAD" errorToBeThrown="NONE" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.005">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+    <globalException type="all" errorToBeThrown="FATAL" maxRetryAttempts="0" exceptionHandlingId="WxxResilience.global.001">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException>
+	
+	 <!-- Fully configured example for location exception:
+	<location name="abc">
+		<exception type="all" callerType="JMS" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" errorMessageRegex=".*JMS.*" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.jms.996">
+			<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		    <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+		</exception>
+	</location>-->
+	 <!-- Minimally configured example for location exception:
+	<location name="abc">
+		<exception type="all" errorToBeThrown="NONE" exceptionHandlingId="WxxResilience.jms.997">
+			<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		    <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+		</exception>
+	</location>-->
+	
+	<location name="wx">
+		<location name="resilience">
+			<location name="pub">	 
+                <location name="jms">
+                    <location name="send">
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.jms.007">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxxResilience.jms.008">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                    </location>
+                   <location name="sendJmsWxMessage">
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.jms.001">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxxResilience.jms.002">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                    </location>
+                    <location name="sendJmsWxMessageAsJson">
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.jms.003">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxxResilience.jms.004">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                    </location>
+			    </location>
+			</location>
+		</location>
+		<location name="config">
+			<location name="pub">	 
+				<location name="getValue">	 
+					<!-- WxConfig -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="did not return any value. Check if key is defined or encrypted value set" maxRetryAttempts="1" exceptionHandlingId="WxxResilience.wxconfig.001">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+					<!-- WxConfigLight -->
+					<exception callerType="JMS"  type="all" errorToBeThrown="FATAL" errorMessageContains="does not exist" maxRetryAttempts="1" exceptionHandlingId="WxxResilience.wxconfig.002">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+				</location>
+				<location name="getValueList">	 
+					<!-- WxConfig -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="did not return any value. Check if key is defined or encrypted value set" maxRetryAttempts="1" exceptionHandlingId="IWxxResilience.wxconfig.003">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+					<!-- WxConfigLight -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="does not exist" maxRetryAttempts="1" exceptionHandlingId="IWxxResilience.wxconfig.004">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+				</location>
+			</location>
+		</location>
+	</location>
+	<location name="pub">
+		<location name="jms">
+			<location name="send">	 
+				<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxxResilience.jms.005">
+					<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+					<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+				</exception>
+				<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxxResilience.jms.006">
+					<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+					<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+				</exception>
+			</location>
+		</location>
+	</location>
+</exceptionHandling>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">LyoqDQogKiBVc2VkIGJ5ICJtdWx0aUNvbmNhdCINCiAqIA0KICovDQpwcml2YXRlIHN0YXRpYyBT
+dHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZykNCnsNCiAgaWYgKGlucHV0U3RyaW5n
+ID09IG51bGwpDQogICAgcmV0dXJuICIiOw0KICBlbHNlDQogICAgcmV0dXJuIGlucHV0U3RyaW5n
+Ow0KfQ0KDQoNCgkNCgkNCg==</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.util.IDataMap</value>
+    <value>java.io.ByteArrayInputStream</value>
+    <value>java.io.ByteArrayOutputStream</value>
+    <value>java.io.IOException</value>
+    <value>java.io.InputStream</value>
+    <value>java.io.OutputStream</value>
+    <value>java.io.UncheckedIOException</value>
+    <value>java.io.UnsupportedEncodingException</value>
+    <value>java.util.ArrayList</value>
+    <value>java.util.Arrays</value>
+    <value>java.util.List</value>
+    <value>java.util.Date</value>
+    <value>java.util.function.BiConsumer</value>
+    <value>java.util.function.Consumer</value>
+    <value>java.util.function.Supplier</value>
+    <value>java.util.regex.Matcher</value>
+    <value>java.util.regex.Pattern</value>
+    <value>java.util.regex.PatternSyntaxException</value>
+    <value>java.text.SimpleDateFormat</value>
+    <value>java.nio.charset.Charset</value>
+    <value>java.nio.charset.IllegalCharsetNameException</value>
+    <value>java.nio.charset.StandardCharsets</value>
+    <value>java.nio.charset.UnsupportedCharsetException</value>
+    <value>java.util.Collections</value>
+    <value>java.util.HashMap</value>
+  </array>
+</Values>
