@@ -60,6 +60,7 @@ public final class errorHandling
 		logInfo("Scanning all packages for ExceptionHandling.xml files");
 		createSummarizedExceptionHandling();
 	
+	
 		// --- <<IS-END>> ---
 
                 
@@ -1341,7 +1342,7 @@ public final class errorHandling
 			return builder.toString();
 		}
 	
-		private static final String LOG_SVC_PATH = "wx.resilience.impl.logError";
+		private static final String LOG_SVC_PATH = "wx.resilience.impl.log";
 	
 		public static void logInfo(String message) {
 			logImpl(message, "Info");
@@ -1501,6 +1502,7 @@ public final class errorHandling
 		private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
 	
 	
+		
 		
 		
 		
