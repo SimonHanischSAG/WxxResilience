@@ -22,7 +22,7 @@ timestampPattern=yyyy-MM-dd'T'HH:mm:ss.SSSZ
 # Log service for pub.flow:debugLog (IS server.log)
 logging.service=wx.resilience.impl.log.wrapper:logDebugLog
 # Log service for WxLog4j2 (log4j2)
-logging.service=wx.resilience.impl.log.wrapper:logWxLog4j2
+#logging.service=wx.resilience.impl.log.wrapper:logWxLog4j2
 # Log service for WxLog (Logback)
 #logging.service=wx.resilience.impl.log.wrapper:logWxLog
 # Log service for WxLog2 (log4j)
