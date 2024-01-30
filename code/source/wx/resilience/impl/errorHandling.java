@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.JournalLogger;
 import com.softwareag.util.IDataMap;
 import com.wm.app.audit.IAuditRuntime;
 import wx.resilience.impl.ErrorInfo;
@@ -57,10 +58,11 @@ public final class errorHandling
 	{
 		// --- <<IS-START(assembleExceptionHandlings)>> ---
 		// @sigtype java 3.5
+		debugLogInfo("start assembleExceptionHandlings");		
 		logInfo("Scanning all packages for ExceptionHandling.xml files");
 		createSummarizedExceptionHandling();
-	
-	
+			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -1379,9 +1381,14 @@ public final class errorHandling
 				Service.doInvoke(LOG_SVC_PATH, "log", input);
 			} 
 			catch (Exception e) {
+				debugLogInfo("Error in logImpl: " + e.getLocalizedMessage());
 			}
 		}
-		
+	
+		private static void debugLogInfo(String message) {
+		    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, WX_RESILIENCE_ERROR, message);
+		}
+	
 		// *******************************************************************
 		// ---------------------XML NODE NAME DEFINITIONS---------------------
 		// *******************************************************************
