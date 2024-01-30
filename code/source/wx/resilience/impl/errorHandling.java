@@ -1379,8 +1379,7 @@ public final class errorHandling
 			
 			try {
 				Service.doInvoke(LOG_SVC_PATH, "log", input);
-			} 
-			catch (Exception e) {
+			} catch (Exception e) {
 				debugLogInfo("Error in logImpl: " + e.getLocalizedMessage());
 			}
 		}
