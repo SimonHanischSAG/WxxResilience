@@ -60,6 +60,7 @@ public final class invokeChainProcessor
         throws ServiceException
 	{
 		// --- <<IS-START(registerWxxResilience)>> ---
+		// @subtype unknown
 		// @sigtype java 3.5
 		// [i] field:1:required invokeChain.blacklist
 		// [o] field:0:required message
@@ -95,6 +96,7 @@ public final class invokeChainProcessor
         throws ServiceException
 	{
 		// --- <<IS-START(unregisterWxxResilience)>> ---
+		// @subtype unknown
 		// @sigtype java 3.5
 		// [o] field:0:required message
 		String message = "";
