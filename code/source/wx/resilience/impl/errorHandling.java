@@ -609,6 +609,7 @@ public final class errorHandling
 		try {
 			try (Creator creator = SummarizedExceptionHandlingHandler.newCreator(outputFile)) {
 				for (File packageDir : ISPackages.listFiles()) {
+					debugLogInfo("Found: " + packageDir);
 					if (packageDir.isDirectory()) {
 						final String packageName = packageDir.getName();
 						if (packageName.startsWith("Wm")) {
@@ -619,6 +620,8 @@ public final class errorHandling
 							final File packageEhdFile = new File(packageCfgDir, ERROR_HANDLING_XML_FILE);
 							if (packageEhdFile.isFile()) {
 								creator.parse(packageEhdFile, packageName);
+								debugLogInfo("parse: " + packageEhdFile);
+	
 							}
 						}
 					}
