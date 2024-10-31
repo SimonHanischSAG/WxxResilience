@@ -2,8 +2,9 @@
 
 <Values version="2.0">
   <value name="name">assembleExceptionHandlings</value>
+  <value name="sigtype">java 3.5</value>
   <value name="encodeutf8">true</value>
   <value name="body">ZGVidWdMb2dJbmZvKCJzdGFydCBhc3NlbWJsZUV4Y2VwdGlvbkhhbmRsaW5ncyIpOwkJDQpsb2dJ
 bmZvKCJTY2FubmluZyBhbGwgcGFja2FnZXMgZm9yIEV4Y2VwdGlvbkhhbmRsaW5nLnhtbCBmaWxl
-cyIpOw0KY3JlYXRlU3VtbWFyaXplZEV4Y2VwdGlvbkhhbmRsaW5nKCk7DQoJDQoJ</value>
+cyIpOw0KY3JlYXRlU3VtbWFyaXplZEV4Y2VwdGlvbkhhbmRsaW5nKCk7DQoJDQoJDQo=</value>
 </Values>
